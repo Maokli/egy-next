@@ -49,8 +49,7 @@ enableButton.addEventListener("click", async () => {
             if(valid)
                 if(currentTime[index] >= duration[index])
                 {
-                    const mainContainer = document.querySelector("#watch_dl");
-                    const container = mainContainer.querySelector(".mbox");
+                    const container = iframeDocument.body.querySelector("div");
                 
                     if(!container)
                         alert("something went wrong, cannot find video");
@@ -68,7 +67,7 @@ enableButton.addEventListener("click", async () => {
                         nextButton.style.right= "2em";
                 
                         chrome.storage.sync.get("url", ({ url }) => {
-                            nextButton.setAttribute("href",url);
+                            nextButton.addEventListener("click", () => window.location.replace(url))
                         });
                         
                         //adding text
