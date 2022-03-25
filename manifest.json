@@ -1,0 +1,13 @@
+{
+    "name": "EgyNext",
+    "description": "Integrates a next button into your EgyBest browser tab so you can quickly navigate to your next episode and have a netflix like experience",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": ["storage", "activeTab", "scripting"],
+    "action": {
+        "default_popup": "popup.html"
+      }
+  }
